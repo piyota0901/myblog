@@ -1,8 +1,8 @@
 ---
 title: "プロセスとスレッド"
 date: "2025-03-15T22:41:00+09:00"
-draft: true
-categories: ["python", "CS"]
+draft: false
+categories: ["OS", "CS", "python"]
 ---
 
 OS において基本的なプロセスとスレッドをぼんやりと理解していたので勉強した。
