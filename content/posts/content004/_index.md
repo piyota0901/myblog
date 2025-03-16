@@ -1,7 +1,7 @@
 ---
 title: "PythonのGILの確認"
 date: "2025-03-16T19:48:23+09:00"
-draft: true
+draft: false
 categories: ["python"]
 ---
 
