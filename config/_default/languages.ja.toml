@@ -1,4 +1,3 @@
-disabled = false
 languageCode = "ja"
 languageName = "Japanese"
 weight = 1
@@ -8,8 +7,8 @@ title = "Piyota's Blog"
   displayName = "JP"
   isoCode = "ja"
   rtl = false
-  dateFormat = "2006/1/2 15:04"
-  # logo = "img/logo.png"
+  dateFormat = "2006/01/02 15:04"
+  logo = "img/logo.png"
   # secondaryLogo = "img/secondary-logo.png"
   # description = "My awesome website"
   # copyright = "Copy, _right?_ :thinking_face:"
@@ -17,7 +16,7 @@ title = "Piyota's Blog"
 [params.author]
   name = "Piyota"
 #  email = "youremail@example.com"
-  image = "img/blowfish_logo.png"
+  image = "img/chick.png"
   imageQuality = 96
   headline = "I'm software engineer"
   bio = "A little bit about you"

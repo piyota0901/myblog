@@ -1,6 +1,6 @@
 ---
 title: "プロセスとスレッド"
-date: "2025-03-15T22:41:00+09:00"
+date: 2025-03-15T22:41:00+09:00
 draft: false
 categories: ["OS", "CS", "python"]
 ---

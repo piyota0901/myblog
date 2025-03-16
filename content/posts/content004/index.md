@@ -1,13 +1,11 @@
 ---
 title: "PythonのGILの確認"
-date: "2025-03-16T19:48:23+09:00"
+date: 2025-03-16T19:48:23+09:00
 draft: false
 categories: ["python"]
 ---
 
-Python の GIL を確認してみた。
-
-[使用したプログラムはこちら 📝](https://github.com/piyota0901/learn-gil-and-async)
+Python の GIL を確認してみた。[使用したプログラムはこちら 📝](https://github.com/piyota0901/learn-gil-and-async)。
 
 ## 検証環境
 

@@ -46,11 +46,11 @@ forgejoDefaultServer = "https://v8.next.forgejo.org"
   #homepageImage = "IMAGE.jpg" # used in: hero, and card
   showRecent = true # 最新記事を表示する
   showRecentItems = 5
-  showMoreLink = false
-  showMoreLinkDest = "/posts/"
+  #showMoreLink = false
+  #showMoreLinkDest = "/posts/"
   cardView = true
-  cardViewScreenWidth = false
-  layoutBackgroundBlur = false # only used when layout equals background
+  #cardViewScreenWidth = false
+  #layoutBackgroundBlur = false # only used when layout equals background
 
 [article]
   showDate = true
@@ -58,7 +58,7 @@ forgejoDefaultServer = "https://v8.next.forgejo.org"
   showLikes = false
   showDateOnlyInArticle = false
   showDateUpdated = false
-  showAuthor = true
+  showAuthor = false
   # showAuthorBottom = false
   showHero = false
   # heroStyle = "basic" # valid options: basic, big, background, thumbAndBackground
