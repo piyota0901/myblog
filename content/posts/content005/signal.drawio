@@ -1,0 +1,248 @@
+<mxfile host="65bd71144e">
+    <diagram id="HjgVpIaA8NCOMf5vIh0w" name="ゾンビプロセス">
+        <mxGraphModel dx="1386" dy="429" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="4" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;rounded=0;curved=0;" edge="1" parent="1" source="2" target="3">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="プロセス１&lt;div&gt;（親）&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="200" y="160" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="プロセス２&lt;div&gt;（子）&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="200" y="280" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="プロセステーブル" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="190" y="350" width="140" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="プロセス１" style="text;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="6">
+                    <mxGeometry y="30" width="140" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="プロセス２" style="text;strokeColor=none;fillColor=#FFE6CC;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="6">
+                    <mxGeometry y="60" width="140" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="fork()" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="1">
+                    <mxGeometry x="190" y="225" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;rounded=0;curved=0;" edge="1" parent="1" source="12" target="13">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="プロセス１&lt;div&gt;（親）&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="440" y="160" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="&lt;font style=&quot;color: rgb(204, 204, 204);&quot;&gt;プロセス２&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;color: rgb(204, 204, 204);&quot;&gt;（子）&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;glass=0;fontColor=#CCCCCC;strokeColor=#B3B3B3;" vertex="1" parent="1">
+                    <mxGeometry x="440" y="280" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="またプロセス２が&lt;div&gt;テーブルに残っている&lt;div&gt;↓&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;u&gt;ゾンビプロセス&lt;/u&gt;&lt;/b&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="580" y="370" width="130" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="" style="endArrow=classic;html=1;dashed=1;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="320" y="245" as="sourcePoint"/>
+                        <mxPoint x="440" y="245" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="17" value="プロセステーブル" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="430" y="350" width="140" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="プロセス１" style="text;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="17">
+                    <mxGeometry y="30" width="140" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="プロセス２" style="text;strokeColor=none;fillColor=#FFE6CC;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="17">
+                    <mxGeometry y="60" width="140" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="プロセス２の&lt;div&gt;処理が終了&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="345" y="205" width="90" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;rounded=0;curved=0;" edge="1" parent="1" source="22" target="23">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="プロセス１&lt;div&gt;（親）&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="730" y="160" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="&lt;font style=&quot;color: rgb(204, 204, 204);&quot;&gt;プロセス２&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;color: rgb(204, 204, 204);&quot;&gt;（子）&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;glass=0;fontColor=#CCCCCC;strokeColor=#B3B3B3;" vertex="1" parent="1">
+                    <mxGeometry x="730" y="280" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="プロセステーブル" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="720" y="350" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="プロセス１" style="text;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="24">
+                    <mxGeometry y="30" width="140" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="" style="endArrow=classic;html=1;dashed=1;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="580" y="245" as="sourcePoint"/>
+                        <mxPoint x="700" y="245" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="28" value="親プロセスが&lt;div&gt;wait()を呼ぶ&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="605" y="205" width="90" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="wait()" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;size=15;position=0.45;dashed=1;fillColor=#FFE6CC;" vertex="1" parent="1">
+                    <mxGeometry x="736" y="130" width="120" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="プロセステーブルから&lt;div&gt;プロセス２が削除される&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="870" y="360" width="150" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="l24F6Ohp06XsOfJsSlfd" name="孤児プロセス">
+        <mxGraphModel dx="1386" dy="1529" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="-C_mecQKT419qOdN5j9u-1" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;rounded=0;curved=0;" edge="1" parent="1" source="-C_mecQKT419qOdN5j9u-2" target="-C_mecQKT419qOdN5j9u-3">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="-C_mecQKT419qOdN5j9u-2" value="プロセス１&lt;div&gt;（親）&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="200" y="160" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="-C_mecQKT419qOdN5j9u-3" value="プロセス２&lt;div&gt;（子）&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="200" y="280" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="-C_mecQKT419qOdN5j9u-4" value="プロセステーブル" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="190" y="350" width="140" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="-C_mecQKT419qOdN5j9u-5" value="プロセス１" style="text;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="-C_mecQKT419qOdN5j9u-4">
+                    <mxGeometry y="30" width="140" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="-C_mecQKT419qOdN5j9u-6" value="プロセス２" style="text;strokeColor=none;fillColor=#FFE6CC;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="-C_mecQKT419qOdN5j9u-4">
+                    <mxGeometry y="60" width="140" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="-C_mecQKT419qOdN5j9u-7" value="fork()" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="1">
+                    <mxGeometry x="190" y="225" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="-C_mecQKT419qOdN5j9u-8" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;rounded=0;curved=0;" edge="1" parent="1" source="-C_mecQKT419qOdN5j9u-9" target="-C_mecQKT419qOdN5j9u-10">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="-C_mecQKT419qOdN5j9u-9" value="&lt;font style=&quot;color: rgb(179, 179, 179);&quot;&gt;プロセス１&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;color: rgb(179, 179, 179);&quot;&gt;（親）&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#B3B3B3;strokeColor=#B3B3B3;" vertex="1" parent="1">
+                    <mxGeometry x="440" y="160" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="-C_mecQKT419qOdN5j9u-10" value="&lt;font style=&quot;&quot;&gt;プロセス２&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;&quot;&gt;（子）&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;glass=0;fontColor=#000000;strokeColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="440" y="280" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="-C_mecQKT419qOdN5j9u-12" value="" style="endArrow=classic;html=1;dashed=1;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="320" y="245" as="sourcePoint"/>
+                        <mxPoint x="440" y="245" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="-C_mecQKT419qOdN5j9u-13" value="プロセステーブル" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="430" y="350" width="140" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="-C_mecQKT419qOdN5j9u-14" value="プロセス１" style="text;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="-C_mecQKT419qOdN5j9u-13">
+                    <mxGeometry y="30" width="140" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="-C_mecQKT419qOdN5j9u-15" value="プロセス２" style="text;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="-C_mecQKT419qOdN5j9u-13">
+                    <mxGeometry y="60" width="140" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="-C_mecQKT419qOdN5j9u-16" value="プロセス１が&lt;div&gt;異常終了&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="345" y="205" width="90" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="-C_mecQKT419qOdN5j9u-17" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;rounded=0;curved=0;" edge="1" parent="1" source="-C_mecQKT419qOdN5j9u-18">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="790" y="280" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="-C_mecQKT419qOdN5j9u-18" value="&lt;font style=&quot;color: rgb(204, 204, 204);&quot;&gt;プロセス１&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;color: rgb(204, 204, 204);&quot;&gt;（親）&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#B3B3B3;fontColor=#B3B3B3;" vertex="1" parent="1">
+                    <mxGeometry x="730" y="160" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="-C_mecQKT419qOdN5j9u-20" value="プロセステーブル" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="720" y="350" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="-C_mecQKT419qOdN5j9u-28" value="プロセス２" style="text;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="-C_mecQKT419qOdN5j9u-20">
+                    <mxGeometry y="30" width="140" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="-C_mecQKT419qOdN5j9u-22" value="" style="endArrow=classic;html=1;dashed=1;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="580" y="245" as="sourcePoint"/>
+                        <mxPoint x="700" y="245" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="-C_mecQKT419qOdN5j9u-23" value="initが&lt;span style=&quot;background-color: transparent;&quot;&gt;wait()を呼ぶ&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="592.5" y="205" width="105" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="-C_mecQKT419qOdN5j9u-24" value="wait()" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;size=15;position=0.45;dashed=1;fillColor=#FFE6CC;" vertex="1" parent="1">
+                    <mxGeometry x="730" y="10" width="120" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="-C_mecQKT419qOdN5j9u-25" value="プロセステーブルから&lt;div&gt;プロセス１が削除される&lt;/div&gt;&lt;div&gt;↓&lt;/div&gt;&lt;div&gt;&lt;u&gt;&lt;b&gt;プロセス２が残ってしまう&lt;/b&gt;&lt;/u&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;font style=&quot;color: rgb(255, 0, 0);&quot;&gt;（孤児プロセス）&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="870" y="350" width="150" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="-C_mecQKT419qOdN5j9u-26" value="init" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="730" y="45" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="-C_mecQKT419qOdN5j9u-27" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;rounded=0;curved=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="-C_mecQKT419qOdN5j9u-26" target="-C_mecQKT419qOdN5j9u-18">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="800" y="210" as="sourcePoint"/>
+                        <mxPoint x="790" y="160" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="-C_mecQKT419qOdN5j9u-29" value="&lt;font style=&quot;&quot;&gt;プロセス２&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;&quot;&gt;（子）&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;glass=0;fontColor=#000000;strokeColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="730" y="280" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="-C_mecQKT419qOdN5j9u-32" value="プロセステーブル" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1040" y="350" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="-C_mecQKT419qOdN5j9u-33" value="プロセス２" style="text;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="-C_mecQKT419qOdN5j9u-32">
+                    <mxGeometry y="30" width="140" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="-C_mecQKT419qOdN5j9u-34" value="プロセス２から見ると親プロセス" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;size=15;position=0.45;dashed=1;fillColor=#FFFFFF;" vertex="1" parent="1">
+                    <mxGeometry x="1050" y="-10" width="120" height="55" as="geometry"/>
+                </mxCell>
+                <mxCell id="-C_mecQKT419qOdN5j9u-36" value="init" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1050" y="45" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="-C_mecQKT419qOdN5j9u-37" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;rounded=0;curved=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="-C_mecQKT419qOdN5j9u-36" target="-C_mecQKT419qOdN5j9u-38">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1120" y="210" as="sourcePoint"/>
+                        <mxPoint x="1110" y="160" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="-C_mecQKT419qOdN5j9u-38" value="&lt;font style=&quot;&quot;&gt;プロセス２&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;&quot;&gt;（子）&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;glass=0;fontColor=#000000;strokeColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="1050" y="280" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="-C_mecQKT419qOdN5j9u-43" value="" style="endArrow=classic;html=1;dashed=1;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="910" y="245" as="sourcePoint"/>
+                        <mxPoint x="1030" y="245" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="-C_mecQKT419qOdN5j9u-44" value="initが引き取る" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="922.5" y="205" width="105" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="-C_mecQKT419qOdN5j9u-45" value="プロセステーブル" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1240" y="350" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="-C_mecQKT419qOdN5j9u-47" value="wait()" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;size=15;position=0.45;dashed=1;fillColor=#FFE6CC;" vertex="1" parent="1">
+                    <mxGeometry x="1250" y="10" width="120" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="-C_mecQKT419qOdN5j9u-48" value="init" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1250" y="45" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="-C_mecQKT419qOdN5j9u-49" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;rounded=0;curved=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="-C_mecQKT419qOdN5j9u-48" target="-C_mecQKT419qOdN5j9u-50">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1320" y="210" as="sourcePoint"/>
+                        <mxPoint x="1310" y="160" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="-C_mecQKT419qOdN5j9u-50" value="&lt;font style=&quot;color: rgb(179, 179, 179);&quot;&gt;プロセス２&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;color: rgb(179, 179, 179);&quot;&gt;（子）&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;glass=0;fontColor=#000000;strokeColor=#B3B3B3;" vertex="1" parent="1">
+                    <mxGeometry x="1250" y="280" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="-C_mecQKT419qOdN5j9u-53" value="" style="endArrow=classic;html=1;dashed=1;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="1155" y="245" as="sourcePoint"/>
+                        <mxPoint x="1275" y="245" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="-C_mecQKT419qOdN5j9u-54" value="1. プロレス２が終&lt;span style=&quot;background-color: transparent;&quot;&gt;了&lt;/span&gt;&lt;div&gt;2. initがwait()を呼ぶ&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="1150" y="200" width="122.5" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="-C_mecQKT419qOdN5j9u-55" value="プロセステーブルから&lt;div&gt;プロセス２が削除される&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="1400" y="350" width="150" height="50" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
