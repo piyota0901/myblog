@@ -3,6 +3,7 @@ title: "SIGTERMとSIGKILLの違いとシグナル処理の検証"
 date: 2025-03-21T15:06:21+09:00
 draft: false
 description: ""
+categories: ["python", "OS"]
 ---
 
 SIGTERM と SIGKILL の違いについて勉強してみた 📝  
