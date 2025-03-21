@@ -1,12 +1,12 @@
 ---
-title: "SIGKTERMとSIGKILL"
-date: 2025-03-18T22:38:55+09:00
-draft: true
+title: "SIGTERMとSIGKILLの違いとシグナル処理の検証"
+date: 2025-03-21T15:06:21+09:00
+draft: false
 description: ""
 ---
 
 SIGTERM と SIGKILL の違いについて勉強してみた 📝  
-強制終了の`kill`コマンドを実行することでプロセスに送信されるシグナルの種類。
+強制終了の`kill`コマンドを実行することでプロセスに送信されるシグナルの種類 ⚡
 
 ## そもそもシグナルとは?
 
@@ -62,6 +62,13 @@ SIGTERM と SIGKILL の違いについて勉強してみた 📝
 
 ## ゾンビプロセス/孤児プロセス
 
+| 名前           | 状態                                                                 |
+| -------------- | -------------------------------------------------------------------- |
+| ゾンビプロセス | 終了したが親が `wait()` を呼んでおらず、プロセステーブルに残っている |
+| 孤児プロセス   | 親が異常終了し、`init` などに引き取られて生き続けている              |
+
+---
+
 ### ゾンビプロセス
 
 ゾンビプロセスは、プロセスが終了したもののプロセステーブルにまだ残っている状態。  
@@ -86,7 +93,7 @@ SIGTERM と SIGKILL の違いについて勉強してみた 📝
   ほとんどの場合、それで意図が通じるからです。
   ```
 
-## Python による検証
+## Python によるシグナル処理の検証
 
 ---
 
@@ -94,9 +101,225 @@ Python では、標準の`signal`モジュールを使用することで、シ�
 メインスレッドにのみ、シグナルハンドラは登録される。  
 _[signal --- 非同期イベントにハンドラーを設定する](https://docs.python.org/ja/3.12/library/signal.html#module-signal)_
 
-Python の Ctrl+C のときの挙動
-signal ハンドラが設定されているはず
+Python の場合、`Ctrl+C`が入力されると`KeyboardInterrupt`（例外）に変換される。
 
-子プロセスが init に渡さされるのか
+### `KeyboardInterrupt`と SIGINT のハンドリング
 
-SIGKILL は即時終了なのか
+どちらでも`SIGINT`をハンドリングできるが、作成するアプリケーションによって`signal`でハンドリングするか、`try-except`でハンドリングするかを考えて実装する必要がある。
+
+- `singal`でハンドリングする場合
+
+  - バックグラウンドプロセス（デーモン・サービス）
+    - Linux のサービス（systemd で起動するようなアプリ）
+    - Web サーバー、キュー処理、常駐監視スクリプトなど
+    - つまり、**ユーザーと対話しないアプリケーション**
+
+- `try-except`でハンドリングする場合
+
+  - 手元で実行する対話的なアプリケーション
+  - 一時的なスクリプト
+  - つまり、**手動操作前提のアプリケーション**
+
+### シグナルのハンドリング検証
+
+子プロセス（単純に sleep し続けるプログラム）を作成するスクリプト。
+
+```python
+import signal
+import subprocess
+import time
+import sys
+import os
+
+child = None
+
+def handle_signal(signum, frame):
+    print(f"\n[Main] Received signal {signum}. Cleaning up...")
+    if child and child.poll() is None:
+        print(f"[Main] Terminating child process (pid={child.pid})")
+        child.terminate()
+        try:
+            child.wait(timeout=5)
+        except subprocess.TimeoutExpired:
+            print(f"[Main] Child didn't exit, killing it")
+            child.kill()
+    print("[Main] Done. Exiting.")
+    sys.exit(0)
+
+# シグナルハンドラ登録
+signal.signal(signal.SIGINT, handle_signal)
+signal.signal(signal.SIGTERM, handle_signal)
+
+# 自分のPIDを表示
+print(f"[Main] PID: {os.getpid()}")
+print("[Main] Starting child process...")
+
+# 子プロセス起動
+child = subprocess.Popen([sys.executable, "-u", "-c", """
+import time
+import os
+import sys
+
+print(f"[Child] PID: {os.getpid()} | Parent PID: {os.getppid()}")
+
+try:
+    while True:
+        time.sleep(1)
+except KeyboardInterrupt:
+    print("[Child] KeyboardInterrupt received.")
+finally:
+    print("[Child] Cleanup before exit.")
+    sys.exit(0)
+"""])
+
+# メインループ
+try:
+    while True:
+        time.sleep(0.5)
+        if child.poll() is not None:
+            print("[Main] Child exited.")
+            break
+except KeyboardInterrupt:
+    handle_signal(signal.SIGINT, None)
+```
+
+**親プロセスに`SIGTERM`を送った場合**
+
+以下のことを確認する
+
+- 子プロセスを停止させてクリーンアップすることを確認する
+- `SIGTERM`の猶予を与える振る舞いを確認する
+
+検証
+
+1. `main.py`を実行する
+
+   ```bash
+   $ uv run python main.py
+   [Main] PID: 58433
+   [Main] Starting child process...
+   [Child] PID: 58434 | Parent PID: 58433
+
+   ```
+
+1. 別のターミナルを開いて、`SIGTERM`を送信する
+
+   - 別ターミナル
+     ```bash
+     $ kill 58433
+     ```
+   - スクリプトのターミナル
+     ```bash
+     [Main] Received signal 15. Cleaning up...
+     [Main] Terminating child process (pid=58434)
+     [Main] Done. Exiting.
+     ```
+
+メインプロセスに`SIGTERM(=15)`が送られて、子プロセスが正しく停止されたことを確認。
+
+**親プロセスに`SIGKILL`を送った場合**
+
+以下のことを確認する。
+
+- 子プロセスを停止させる処理が実行されないことを確認する
+- `SIGKILL`の即時強制という振る舞いを確認する
+
+検証
+
+1. `main.py`を実行する
+
+   ```bash
+   $ uv run python main.py
+   [Main] PID: 59870
+   [Main] Starting child process...
+   [Child] PID: 59871 | Parent PID: 59870
+   ```
+
+1. 別のターミナルを開いて、`SIGKILL`を送信する
+
+   ```bash
+   $ kill -9 59870
+   ```
+
+1. 子プロセスを確認する
+
+   ```bash
+   $ ps -o pid,ppid,stat,command -p 59871
+   PID    PPID STAT COMMAND
+   59871     625 S    /home/tatsuro/workspaces/learn-sigkill-sigterm/.ve
+   (learn-sigkill-sigterm)
+   ```
+
+1. 親プロセス(`PPID`: 625)を確認する
+
+   ```bash
+   ps 625
+
+   PID TTY      STAT   TIME COMMAND
+   625 ?        S      0:00 /init
+   (learn-sigkill-sigterm)
+   ```
+
+   **init**に引き取られていることを確認
+
+1. 子プロセスを kill する
+
+   ```bash
+   $ kill -9 59871
+   ```
+
+親プロセスに`SIGKILL`を送信すると、子プロセスを停止しないまま即時終了とんったことを確認。子プロセスは孤児プロセスになり、`init`に引き取られることも確認。
+
+**`init`なのに PID=625 となるのはなぜか**
+
+簡単に言うと`systemd(PID=1)`の配下に`/init`があるため。
+
+```bash
+$ pstree -p
+systemd(1)─┬─agetty(220)
+           ├─agetty(223)
+           ├─containerd(209)─┬─{containerd}(234)
+           │                 ├─{containerd}(237)
+            ・・・
+           │
+           │
+           ├─init-systemd(Ub(2)─┬─SessionLeader(624)───Relay(626)(625)+++
+           │                    ├─SessionLeader(939)───Relay(946)(940)+++
+           │                    ├─SessionLeader(55675)───Relay(55677)(+
+           │                    ├─init(6)───{init}(7)
+           │                    ├─login(601)───zsh(697)
+           │                    └─{init-systemd(Ub}(8)
+           ├─ollama(185)─┬─{ollama}(233)
+           │             ├─{ollama}(235)
+           │             ├─・・・
+           │             └─{ollama}(300)
+            ・・・
+           │               └─{rsyslogd}(245)
+           ├─systemd(681)───(sd-pam)(682)
+           ├─systemd-journal(54)
+           ├─systemd-logind(190)
+           ├─systemd-resolve(160)
+           ├─systemd-timesyn(161)───{systemd-timesyn}(168)
+           ├─systemd-udevd(99)
+           ├─unattended-upgr(230)───{unattended-upgr}(299)
+           └─wsl-pro-service(201)─┬─{wsl-pro-service}(246)
+                                  ├─{wsl-pro-service}(247)
+                                  ├─{wsl-pro-service}(248)
+                                  ├─{wsl-pro-service}(249)
+                                  ├─{wsl-pro-service}(250)
+                                  ├─{wsl-pro-service}(270)
+                                  ├─{wsl-pro-service}(271)
+                                  ├─{wsl-pro-service}(57371)
+                                  ├─{wsl-pro-service}(57372)
+                                  ├─{wsl-pro-service}(57373)
+                                  ├─{wsl-pro-service}(57374)
+                                  └─{wsl-pro-service}(57375)
+```
+
+`systemd`の配下に`init-systemd`が存在していることが確認できる。
+
+### 検証のまとめ
+
+- `SIGTERM`：クリーンアップ処理が行われ、子プロセスも安全に終了できる。
+- `SIGKILL`：親プロセスが即時終了し、子プロセスは孤児として残る。
+- WSL 環境では、`/init` は `systemd` 配下のプロセスであり、孤児プロセスの親として表示されることがある。
