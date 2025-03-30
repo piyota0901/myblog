@@ -1,0 +1,182 @@
+<mxfile host="65bd71144e">
+    <diagram id="TOnJFqNG4WAf0tsvQG2q" name="overview">
+        <mxGraphModel dx="1382" dy="429" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="アプリケーション&lt;div&gt;（プログラム）&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="80" y="240" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="OS" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                    <mxGeometry x="330" y="220" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="イ&lt;div&gt;ン&lt;/div&gt;&lt;div&gt;タ&lt;/div&gt;&lt;div&gt;ー&lt;/div&gt;&lt;div&gt;フ&lt;/div&gt;&lt;div&gt;ェ&lt;/div&gt;&lt;div&gt;ー&lt;/div&gt;&lt;div&gt;ス&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="260" y="200" width="20" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="システムコール&lt;div&gt;open(), socket(),..etc&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="202.5" y="130" width="135" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="6" target="5">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="255" y="190" as="sourcePoint"/>
+                        <mxPoint x="215" y="40" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="12" value="" style="endArrow=classic;html=1;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="290" y="250" as="sourcePoint"/>
+                        <mxPoint x="320" y="250" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="13" value="" style="endArrow=none;html=1;startArrow=classic;startFill=1;endFill=0;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="290" y="270" as="sourcePoint"/>
+                        <mxPoint x="320" y="270" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="14" value="" style="endArrow=classic;html=1;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="215" y="249.71" as="sourcePoint"/>
+                        <mxPoint x="245" y="249.71" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="15" value="" style="endArrow=none;html=1;startArrow=classic;startFill=1;endFill=0;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="215" y="269.71" as="sourcePoint"/>
+                        <mxPoint x="245" y="269.71" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="J1VK2gLh0V9kkepFNelj" name="usermode_kernelmode">
+        <mxGraphModel dx="784" dy="820" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="vN3aQdoyq_IWeirWHVhG-45" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="30" y="433" width="510" height="157" as="geometry"/>
+                </mxCell>
+                <mxCell id="BiSMzw0gfV3WNiCzi6MD-1" value="アプリケーション&lt;div&gt;（プログラム）&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="80" y="252" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="BiSMzw0gfV3WNiCzi6MD-2" value="カーネル" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                    <mxGeometry x="330" y="232" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="BiSMzw0gfV3WNiCzi6MD-5" value="" style="endArrow=classic;html=1;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="290" y="262" as="sourcePoint"/>
+                        <mxPoint x="320" y="262" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="BiSMzw0gfV3WNiCzi6MD-6" value="" style="endArrow=none;html=1;startArrow=classic;startFill=1;endFill=0;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="290" y="282" as="sourcePoint"/>
+                        <mxPoint x="320" y="282" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="BiSMzw0gfV3WNiCzi6MD-7" value="" style="endArrow=classic;html=1;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="215" y="261.71000000000004" as="sourcePoint"/>
+                        <mxPoint x="245" y="261.71000000000004" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="BiSMzw0gfV3WNiCzi6MD-8" value="" style="endArrow=none;html=1;startArrow=classic;startFill=1;endFill=0;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="215" y="281.71" as="sourcePoint"/>
+                        <mxPoint x="245" y="281.71" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="vN3aQdoyq_IWeirWHVhG-1" value="システムコ｜ル" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="260" y="212" width="20" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="vN3aQdoyq_IWeirWHVhG-2" value="ユーザーモード" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=0" vertex="1" parent="1">
+                    <mxGeometry x="120" y="165" width="120" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="vN3aQdoyq_IWeirWHVhG-3" value="カーネルモード" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=0" vertex="1" parent="1">
+                    <mxGeometry x="320" y="165" width="120" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="vN3aQdoyq_IWeirWHVhG-4" value="" style="endArrow=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;dashed=1;" edge="1" parent="1" source="vN3aQdoyq_IWeirWHVhG-1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="260" y="190" as="sourcePoint"/>
+                        <mxPoint x="270" y="160" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="vN3aQdoyq_IWeirWHVhG-6" value="" style="endArrow=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;dashed=1;" edge="1" parent="1" source="vN3aQdoyq_IWeirWHVhG-1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="280" y="222" as="sourcePoint"/>
+                        <mxPoint x="270" y="400" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="vN3aQdoyq_IWeirWHVhG-7" value="・演算処理&lt;div&gt;・配列/変数の操作&lt;/div&gt;&lt;div&gt;・ローカル関数の呼び出し&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=default;fillColor=none;align=left;dashed=1;" vertex="1" parent="1">
+                    <mxGeometry x="80" y="332" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="vN3aQdoyq_IWeirWHVhG-8" value="・ファイル操作&lt;div&gt;・ネットワーク通信&lt;/div&gt;&lt;div&gt;・・・など&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=default;fillColor=none;align=left;dashed=1;" vertex="1" parent="1">
+                    <mxGeometry x="300" y="332" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="vN3aQdoyq_IWeirWHVhG-24" value="CPUのモード" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="230" y="130" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="vN3aQdoyq_IWeirWHVhG-25" value="" style="endArrow=none;html=1;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="40" y="160" as="sourcePoint"/>
+                        <mxPoint x="520" y="160" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="vN3aQdoyq_IWeirWHVhG-27" value="" style="endArrow=none;html=1;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="40" y="130" as="sourcePoint"/>
+                        <mxPoint x="520" y="130" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="vN3aQdoyq_IWeirWHVhG-29" value="" style="triangle;whiteSpace=wrap;html=1;rotation=-90;fillColor=#333333;" vertex="1" parent="1">
+                    <mxGeometry x="255" y="398.5" width="30" height="37" as="geometry"/>
+                </mxCell>
+                <mxCell id="vN3aQdoyq_IWeirWHVhG-31" value="メモリ空間の動き&lt;div&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;例. ファイルの読み込みの場合&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="440" width="220" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="vN3aQdoyq_IWeirWHVhG-34" value="カーネル空間" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="310" y="520" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="vN3aQdoyq_IWeirWHVhG-35" value="ユーザー空間" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="80" y="520" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="vN3aQdoyq_IWeirWHVhG-36" value="" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;size=12;" vertex="1" parent="1">
+                    <mxGeometry x="480" y="520" width="30" height="37.5" as="geometry"/>
+                </mxCell>
+                <mxCell id="vN3aQdoyq_IWeirWHVhG-37" value="" style="endArrow=none;html=1;startArrow=classic;startFill=1;endFill=0;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="440" y="539.5" as="sourcePoint"/>
+                        <mxPoint x="470" y="539.5" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="vN3aQdoyq_IWeirWHVhG-38" value="ファイル" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="460" y="560" width="70" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="vN3aQdoyq_IWeirWHVhG-41" style="edgeStyle=none;html=1;endArrow=none;endFill=0;dashed=1;" edge="1" parent="1" source="vN3aQdoyq_IWeirWHVhG-40">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="458" y="533" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="vN3aQdoyq_IWeirWHVhG-40" value="ファイルの内容を読み込む" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="415" y="470" width="95" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="vN3aQdoyq_IWeirWHVhG-42" value="" style="endArrow=none;html=1;startArrow=classic;startFill=1;endFill=0;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="210" y="540" as="sourcePoint"/>
+                        <mxPoint x="300" y="539.76" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="vN3aQdoyq_IWeirWHVhG-43" value="ユーザー空間に&lt;span style=&quot;background-color: transparent;&quot;&gt;コピー&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="196.25" y="480" width="127.5" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="vN3aQdoyq_IWeirWHVhG-44" style="edgeStyle=none;html=1;endArrow=none;endFill=0;dashed=1;" edge="1" parent="1" source="vN3aQdoyq_IWeirWHVhG-43">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="252" y="537" as="targetPoint"/>
+                        <mxPoint x="255" y="504" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
