@@ -1,7 +1,7 @@
 ---
 title: "システムコール"
 date: 2025-03-29T16:25:54+09:00
-draft: true
+draft: false
 description: ""
 categories: ["OS"]
 ---
